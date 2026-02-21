@@ -1,19 +1,25 @@
-// Mostre os dados da aplicação, como aprensetado no vídeo
-// Não utilize CSS externo, use o style para mudar as cores
-// Se a situação estiver ativa pinte de verde, inativa vermelho
-// Se o gasto for maior que 10000 mostre uma mensagem
+// rafc
 import React from "react";
 import Clients from "./components/clients";
 import Arrays from "./components/arrays";
 import ArrayExec from "./components/arraysExec";
+import Events from "./components/events";
+import Titulo from "./components/Titulo";
+import Form from "./components/Form";
+import Produtos from "./components/Produtos";
 
 const App = () => {
+
+  const userNam = 'Erik Locatelli'
+
   return (
     <div>
-      <h1>Exercicíos: </h1>
+      {/* <h1>Exercicíos: </h1>
+      <Titulo cor={'blue'} texto={"Bem vindo de volta " + userNam} />
       <Clients />
-      {/* <Arrays /> */}
-      <ArrayExec />
+      <Events />
+      <Form /> */}
+      <Produtos />
     </div>
   )
 };
