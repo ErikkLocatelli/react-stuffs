@@ -7,6 +7,7 @@ import Events from "./components/events";
 import Titulo from "./components/Titulo";
 import Form from "./components/Form";
 import Produtos from "./components/Produtos";
+import States from "./components/States";
 
 const App = () => {
 
@@ -20,6 +21,7 @@ const App = () => {
       <Events />
       <Form /> */}
       <Produtos />
+      <States />
     </div>
   )
 };
