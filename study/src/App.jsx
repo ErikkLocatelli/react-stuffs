@@ -8,6 +8,7 @@ import Titulo from "./components/Titulo";
 import Form from "./components/Form";
 import Produtos from "./components/Produtos";
 import States from "./components/States";
+import FetchProdutos from "./components/FetchProdutos";
 
 const App = () => {
 
@@ -15,13 +16,7 @@ const App = () => {
 
   return (
     <div>
-      {/* <h1>Exercicíos: </h1>
-      <Titulo cor={'blue'} texto={"Bem vindo de volta " + userNam} />
-      <Clients />
-      <Events />
-      <Form /> */}
-      <Produtos />
-      <States />
+      <FetchProdutos />
     </div>
   )
 };
