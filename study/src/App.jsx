@@ -9,15 +9,22 @@ import Form from "./components/Form";
 import Produtos from "./components/Produtos";
 import States from "./components/States";
 import FetchProdutos from "./components/FetchProdutos";
+import Effect from "./components/Effect";
+import Preference from "./components/Preference";
+import UseRef from "./components/UseRef";
+import Comprar from "./components/Comprar";
+import UseStateComp from "./components/useState";
+import Produto2 from "./components/Produto2";
+import { GlobalStorage } from "./components/Context";
 
 const App = () => {
 
   const userNam = 'Erik Locatelli'
-
+  
   return (
-    <div>
-      <FetchProdutos />
-    </div>
+    <GlobalStorage>
+      <Produto2 />
+    </GlobalStorage>
   )
 };
 

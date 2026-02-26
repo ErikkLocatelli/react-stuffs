@@ -32,11 +32,9 @@ const FetchProdutos = () => {
       <Button onClick={() => getData("https://ranekapi.origamid.dev/json/api/produto/tablet")} texto={"Buscar Tablet"}/>
       <Button onClick={() => getData("https://ranekapi.origamid.dev/json/api/produto/smartphone")} texto={"Buscar Smartphone"}/>
       <Button onClick={() => getData("https://ranekapi.origamid.dev/json/api/produto/notebook")} texto={"Buscar Notebook"}/>
-      {dados ? 
-        loading ? 
-        <p>Loading...</p>
-        :
-        <section>
+      {loading && !dados && <p>Loading...</p>}
+      {!dados && !loading && <p>Busque por um produto</p>}
+      {dados &&  <section>
             <p>{dados.nome} - {"R$ " + dados.preco} - {dados.vendido ? "Fora de estoque" : "Em estoque"}</p>
             {dados.fotos.map(({titulo, src}) => (
                 <div key={titulo}>
@@ -45,11 +43,7 @@ const FetchProdutos = () => {
                 </div>
             ))}
             <p>{dados.descricao}</p>
-        </section>
-        : 
-      <div>
-        <p>Busque os dados desejados</p>
-      </div>}
+        </section>}
     </div>
   )
 }
