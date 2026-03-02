@@ -16,15 +16,17 @@ import Comprar from "./components/Comprar";
 import UseStateComp from "./components/useState";
 import Produto2 from "./components/Produto2";
 import { GlobalStorage } from "./components/Context";
+import Input from "./components/form/Input";
 
 const App = () => {
 
   const userNam = 'Erik Locatelli'
   
   return (
-    <GlobalStorage>
-      <Produto2 />
-    </GlobalStorage>
+    // <GlobalStorage>
+    //   <Produto2 />
+    // </GlobalStorage>
+    <Input />
   )
 };
 

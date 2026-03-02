@@ -13,6 +13,8 @@ const Produto2 = () => {
         global.getData()
     }, [])
 
+    console.log(global.produtos)
+
   return (
     <div>
         <Button texto={"Buscar Dados"} onClick={global.getData} style={{marginRight: "10px"}} />
