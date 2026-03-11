@@ -1,6 +1,6 @@
 import React from 'react'
 
-function InputText({id, label,...props}) {
+function InputText({id, label, ...props}) {
   return (
     <div>
       <label htmlFor={id}>{label}</label>

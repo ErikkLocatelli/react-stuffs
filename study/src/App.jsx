@@ -26,7 +26,9 @@ const App = () => {
     // <GlobalStorage>
     //   <Produto2 />
     // </GlobalStorage>
-    <Input />
+    <div>
+      <Input />
+    </div>
   )
 };
 
