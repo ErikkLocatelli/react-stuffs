@@ -1,15 +1,11 @@
 import React from 'react'
 
-const Radio = ({dados,...props}) => {
+const Radio = ({dado,...props}) => {
   return (
-    <>
-    {dados.map((dado) => (
       <label key={dado}>
         <input type="radio" {...props} />
         {dado}
       </label>
-    ))}
-    </>
   )
 }
 

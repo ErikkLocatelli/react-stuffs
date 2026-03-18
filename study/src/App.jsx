@@ -17,6 +17,7 @@ import UseStateComp from "./components/useState";
 import Produto2 from "./components/Produto2";
 import { GlobalStorage } from "./components/Context";
 import Input from "./components/form/Input";
+import ChalengeForm from "./components/form/chalengeForm";
 
 const App = () => {
 
@@ -26,9 +27,10 @@ const App = () => {
     // <GlobalStorage>
     //   <Produto2 />
     // </GlobalStorage>
-    <div>
-      <Input />
-    </div>
+    // <div>
+    //   <Input />
+    // </div>
+    <ChalengeForm />
   )
 };
 
