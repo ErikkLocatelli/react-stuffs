@@ -1,0 +1,72 @@
+.container {
+  width: 600px;
+}
+
+.content {
+  display: flex;
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+.item {
+  flex-shrink: 0;
+  width: 80%;
+  margin: 0 10%;
+  border-radius: 4px;
+  background-color: #eee;
+  text-align: center;
+  padding: 10rem 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 1rem auto;
+  align-items: center;
+}
+
+.img {
+    max-width: 300px;
+    min-width: 300px;
+}
+
+.circles {
+    width: 30%;
+    height: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.circle {
+    all: unset;
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.circle:hover {
+    background-color: black;
+}
+
+.circle:checked {
+  background-color: black;
+  border-color: black;
+  box-shadow: 0 0 0 3px var(--color-light), 0 0 0 4px var(--color);
+  transition-duration: .4s;
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeLeft 0.3s forwards;
+}
+
+@keyframes animeLeft {
+  to {
+    opacity: initial;
+    transform: initial;
+  }
+}

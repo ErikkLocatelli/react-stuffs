@@ -1,0 +1,11 @@
+img {
+    max-width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: .8em;
+}
+
+.text {
+    font-size: 1.35em;
+    font-weight: bold;
+}

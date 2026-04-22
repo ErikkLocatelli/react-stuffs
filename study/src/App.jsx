@@ -18,6 +18,8 @@ import Produto2 from "./components/Produto2";
 import { GlobalStorage } from "./components/Context";
 import Input from "./components/form/Input";
 import ChalengeForm from "./components/form/chalengeForm";
+import Anima from "./css-trial/components/anima";
+import TestRoutes from "./components/routers/TestRoutes";
 
 const App = () => {
 
@@ -30,7 +32,7 @@ const App = () => {
     // <div>
     //   <Input />
     // </div>
-    <ChalengeForm />
+    <TestRoutes />
   )
 };
 

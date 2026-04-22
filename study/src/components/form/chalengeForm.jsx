@@ -49,14 +49,20 @@ const ChalengeForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setIndex(index + 1)
-        if(resposta == pergunta.resposta ) {
+
+        const acertou = resposta === pergunta.resposta;
+
+        if(acertou) {
             setAcerto(acerto + 1)
-            setResposta([...respostas, resposta]);
-        } else { 
-            setResposta([...respostas, resposta]);
         }
-}
+        setResposta([...respostas, {
+            id: resposta.id, 
+            resposta: resposta, 
+            correta: acertou
+        }])
+        setIndex(index + 1)
+        setRespostaAtual("")
+    }
 
     const handleChange = ({target}) => {
         if(target.checked) {
@@ -68,21 +74,23 @@ const ChalengeForm = () => {
         setAcerto(0)
         setIndex(0)
     }
+
  
   return (
    <form onSubmit={index == 4 ? handleRestart : handleSubmit}>
-    <Titulo texto={index < 4 ? pergunta.pergunta : "Desempenho:"}/>
-    {index < 4 && pergunta.options.map((opt) => (
+    <Titulo texto={index < perguntas.length ? pergunta.pergunta : "Desempenho:"}/>
+    {index < perguntas.length && pergunta.options.map((opt) => (
         <Radio dado={opt} key={opt} value={opt} onChange={handleChange} name={pergunta.id} required />
     ))}
-    {index == 4 && <div>
-        <p>{acerto}/4</p>
-        {respostas.map(r => {
-            <p key={r}>{r}</p>
-        })}
+    {index == perguntas.length && <div>
+        <p>{acerto}/{perguntas.length}</p>
+        <p>Suas Respostas: </p>
+        {respostas.map(({resposta, correta}) => (
+            <p className={correta ? 'right' : 'whrong'}>{resposta}</p>
+        ))}
     </div>}
     
-    <Button texto={index == 4 ? "Tentar novamente" : "Próxima"} type={"submit"} />
+    <Button texto={index == perguntas.length ? "Tentar novamente" : "Próxima"} type={"submit"} />
    </form>
   )
 }
