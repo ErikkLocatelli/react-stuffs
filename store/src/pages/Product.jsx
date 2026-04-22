@@ -4,6 +4,7 @@ import useFetch from '../hooks/useFetch'
 
 import styles from '../components/styles/pages/Product.module.css'
 import Button from '../components/Button'
+import Loading from '../components/Loading'
 
 const Product = () => {
   
@@ -15,7 +16,7 @@ const Product = () => {
       request(`https://ranekapi.origamid.dev/json/api/produto/${params.id}`)
     }, [request])
 
-    if(loading) return <p>Carregando...</p>
+    if(loading) return <Loading />
     if(error) return <p>Erro</p>
 
     return (

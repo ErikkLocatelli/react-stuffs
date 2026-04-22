@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import Product from '../components/Product'
 import styles from '../components/styles/pages/Products.module.css'
+import Loading from '../components/Loading'
 
 import useFetch from '../hooks/useFetch'
 
@@ -14,7 +15,7 @@ const Products = () => {
       request('https://ranekapi.origamid.dev/json/api/produto')
     }, [request])
 
-  if (loading) return <p>Carregando...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>Erro: {error}</p>;
 
   return (
