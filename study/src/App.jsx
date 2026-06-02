@@ -1,5 +1,5 @@
 // rafc
-import React from "react";
+import React, {useState} from "react";
 import Clients from "./components/clients";
 import Arrays from "./components/arrays";
 import ArrayExec from "./components/arraysExec";
@@ -20,11 +20,16 @@ import Input from "./components/form/Input";
 import ChalengeForm from "./components/form/chalengeForm";
 import Anima from "./css-trial/components/anima";
 import TestRoutes from "./components/routers/TestRoutes";
+import Button from "./moreReact/Button";
+import Header from './moreReact/Header'
+import { useAsyncError } from "react-router-dom";
+import Reducer from "./moreReact/Reducer";
 
 const App = () => {
 
   const userNam = 'Erik Locatelli'
-  
+  const [contagem, setContar] = useState(0) 
+
   return (
     // <GlobalStorage>
     //   <Produto2 />
@@ -32,7 +37,16 @@ const App = () => {
     // <div>
     //   <Input />
     // </div>
-    <TestRoutes />
+    <div>
+      {/* <TestRoutes />
+      <Button onClick={() => setContar(contagem + 1)}
+       width = {100}
+       backgroundColor = "red"
+       text = {"oi"} />
+      <Header /> */}
+      <Reducer />
+    </div>
+  
   )
 };
 
