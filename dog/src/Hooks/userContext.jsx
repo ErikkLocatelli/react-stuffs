@@ -40,6 +40,8 @@ export const UserStorage = ({children}) => {
       window.localStorage.setItem('token', json.token)
 
       await getUser(json.token)
+
+      navigate('account')
     }
   }
 
@@ -49,8 +51,6 @@ export const UserStorage = ({children}) => {
     const { json } = await request(url, options)
     setData(json)
     setLogin(true)
-
-    navigate('account')
   }
 
   const userLogout = async () => {

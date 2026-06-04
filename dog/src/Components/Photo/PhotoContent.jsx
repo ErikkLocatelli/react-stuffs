@@ -9,13 +9,13 @@ import styles from './PhotoContent.module.css'
 import PhotoComments from './PhotoComments'
 import PhotoDelete from './PhotoDelete'
 
-const PhotoContent = ({info}) => {
+const PhotoContent = ({info, single = false}) => {
 
   const { photo, comments } = info
   const { data } = useContext(userContext)
 
   return (
-    <div className={styles.photo}>
+    <div className={`${styles.photo} ${single ? styles.single : ''}`}>
       <div className={styles.img}>
         <Image src={photo.src} alt={photo.title} />
       </div>

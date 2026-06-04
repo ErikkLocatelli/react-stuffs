@@ -68,11 +68,7 @@ export const PHOTO_POST = (token, formData) => {
 
 export const PHOTOS_GET = ({page, total, user}) => {
     return {
-        url: API_URL + `/api/photo/?_page=${page}&_total=${total}&_user=${user}`, 
-        options: {
-            method: 'GET', 
-            cache: 'no-store'
-        }
+        url: API_URL + `/api/photo/?_page=${page}&_total=${total}&_user=${user}`
     }
 }
 
@@ -111,5 +107,18 @@ export const PHOTO_DELETE = (id, token) => {
             Authorization: 'Bearer ' + token,
             },
         },
+    }
+}
+
+export const PASSWORD_RESET = (body) => {
+    return {
+        url: API_URL + 'api/password/lost', 
+        options: {
+            method: "POST", 
+            headers: {
+                'Content-Type': 'application/json', 
+            }, 
+            body: JSON.stringify(body),
+        }
     }
 }

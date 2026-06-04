@@ -7,6 +7,7 @@ import LostPassword from './LostPassword'
 import ResetPassword from './ResetPassword'
 
 import styles from './Login.module.css'
+import Error404 from '../Helpers/Error404'
 
 const Login = () => {
   return (
@@ -17,6 +18,7 @@ const Login = () => {
           <Route path='create' element={<CreateLogin />} />
           <Route path='lost-password' element={<LostPassword />} />
           <Route path='reset-password' element={<ResetPassword />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </div>
     </section>

@@ -2,8 +2,6 @@ import React from 'react'
 
 import Error from '../Helpers/Error'
 
-import styles from './PhotoDelete.module.css'
-
 import { PHOTO_DELETE } from '../../Helpers/api'
 import { getToken } from '../../Helpers/getToken'
 import useFetch from '../../Hooks/UseFetch'
@@ -27,7 +25,7 @@ const PhotoDelete = ({id}) => {
 
   return (
     <>
-      <button className={styles.delete} onClick={handleDelete} disabled={loading}>Deletar foto</button>
+      <button onClick={handleDelete} disabled={loading}>Deletar foto</button>
       <Error message={error} />
     </>
   )
