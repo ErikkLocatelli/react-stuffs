@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import useForm from '../../Hooks/useForm'
 import { userContext } from '../../Hooks/userContext'
+import useHead from '../../Hooks/useHead'
 
 import Input from '../Forms/Input'
 import Button from '../Forms/Button'
@@ -16,6 +17,11 @@ const FormLogin = () => {
    const password = useForm()
 
    const { userLogin, error, loading  } = useContext(userContext)
+
+   useHead({
+    title: "Login", 
+    description: "Tela de login"
+   })
 
    const handleSubmit = async (event) => {
         event.preventDefault()

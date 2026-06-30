@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import { userContext } from '../../Hooks/userContext'
 
+import useHead from '../../Hooks/useHead'
 import UserHeader from './UserHeader'
 import Feed from '../Feed/Feed'
 import UserPhotoPost from './UserPhotoPost'
@@ -11,6 +12,7 @@ const User = () => {
 
   const { data } = useContext(userContext)
   const username = data.username
+  useHead({title: "Perfil " + username})
 
   return (
    <section className='container'>

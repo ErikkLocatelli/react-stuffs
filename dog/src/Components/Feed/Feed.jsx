@@ -5,6 +5,7 @@ import FeedPhotos from './FeedPhotos'
 import useFetch from '../../Hooks/UseFetch'
 import Loading from '../Helpers/Loading'
 import Error from '../Helpers/Error'
+import useHead from '../../Hooks/useHead'
 
 import { PHOTOS_GET } from '../../Helpers/api'
 
@@ -15,6 +16,11 @@ const Feed = ({user}) => {
   const [infinite, setInfinite] = useState(true)
 
   const { error, loading, request } = useFetch()
+
+  useHead({
+    title: "Feed", 
+    description: "Página de feed de fotos"
+  })
 
   useEffect(() => {
     async function fetchPhotos() {
@@ -60,10 +66,8 @@ const Feed = ({user}) => {
 
   return (
     <>
-      <FeedPhotos
-        photos={photos}
-        setModalPhoto={setModalPhoto}
-      />
+      <FeedPhotos photos={photos} setModalPhoto={setModalPhoto} />
+      {modalPhoto && <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />}
 
       {loading && <Loading />}
 

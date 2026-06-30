@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import useForm from '../../Hooks/useForm'
 import useFetch from '../../Hooks/UseFetch'
 import { PASSWORD_RESET } from '../../Helpers/api'
+import useHead from '../../Hooks/useHead'
 
 import Input from '../Forms/Input'
 import Button from '../Forms/Button'
@@ -16,6 +17,8 @@ const LostPassword = () => {
   const [send, setSend] = useState(false);
   const { request, error, loading } = useFetch()
   const location = window.document.location.href; 
+
+  useHead({title: "Recuperar a senha", description: 'Página para recuperar a senha'})
 
   const handleSubmit = async (e) => {
     e.preventDefault()

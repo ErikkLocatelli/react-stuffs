@@ -5,6 +5,7 @@ import UseFetch from '../../Hooks/UseFetch'
 
 import { PHOTO_POST } from '../../Helpers/api'
 import { getToken } from '../../Helpers/getToken'
+import useHead from '../../Hooks/useHead'
 
 import styles from "./UserPhotoPost.module.css"
 
@@ -22,6 +23,8 @@ const UserPhotoPost = () => {
   const token = getToken()
   const { error, loading, request } = UseFetch() 
   const navigate = useNavigate()
+
+  useHead({title: "Postar Fotos"})
 
   const handleSubmit = async (e) => {
     e.preventDefault()

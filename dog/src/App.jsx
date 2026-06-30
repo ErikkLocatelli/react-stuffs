@@ -17,22 +17,24 @@ import UserProfile from './Components/User/UserProfile'
 function App() {
 
   return (
-    <>
-    <BrowserRouter>
-      <UserStorage>
-        <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='login/*' element={<Login />} />
-          <Route path='account/*' element={<ProtectedRouter component={<User />} />} />
-          <Route path='photo/:id' element={<Photo />} />
-          <Route path='profile/:user' element={<UserProfile />} />
-          <Route path='*' element={<Error404 />} />
-        </Routes>
-        <Footer />
-      </UserStorage>
-    </BrowserRouter>
-    </>
+    <div className='App'>
+      <BrowserRouter>
+        <UserStorage>
+          <Header />
+          <main className='AppBody'>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='login/*' element={<Login />} />
+              <Route path='account/*' element={<ProtectedRouter component={<User />} />} />
+              <Route path='photo/:id' element={<Photo />} />
+              <Route path='profile/:user' element={<UserProfile />} />
+              <Route path='*' element={<Error404 />} />
+            </Routes>
+          </main>
+          <Footer />
+        </UserStorage>
+      </BrowserRouter>
+    </div>
   )
 }
 
